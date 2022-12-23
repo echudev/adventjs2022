@@ -1,14 +1,8 @@
 function dryNumber(dry, numbers) {
-    let result = [];
-    let i = dry;
-    while (i <= numbers) {
-        if (i.toString().includes(dry.toString())) {
-            result.push(Number(i));
-        }
-        i++;
-    }
-    return result;
-}
+    return Array
+      .from({ length: numbers }, (_, i) => i + 1)
+      .filter(n => n.toString().includes(dry))
+  }
 
 console.log(dryNumber(1, 15)) // [1, 10, 11, 12, 13, 14, 15]
 
