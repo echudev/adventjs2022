@@ -1,16 +1,10 @@
 function getOptimalPath(path) {
-    let i = 0
-    let res = 0
-    path
-        .map(level => {
-            res += Math.min(...level.slice(i, i + 2))
-            i = level.indexOf(Math.min(...level.slice(i, i + 2)))
-        })
-    return res
-}
-
-
-
+    return path.reduceRight((prev, actual) => {
+      return actual.map((v, i) => {
+        return v + Math.min(prev[i], prev[i + 1])
+      })
+    })[0]
+  }
 
 
 //getOptimalPath([[0], [2, 3]]) // 2
