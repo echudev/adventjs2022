@@ -1,27 +1,15 @@
 function carryGifts(gifts, maxWeight) {
-    let saco = []
-    let res = [] 
-
-    gifts = gifts.filter(gift => gift.length <= maxWeight)
-    while (gifts.length > 0) {
-        if (gifts[0].length + saco.flat().join('').length > maxWeight) {
-            res.push(saco.join(' ').trimEnd())
-            saco = []
-            saco.push(gifts.splice(0, 1))
-        } else {
-            saco.push(gifts.splice(0, 1))
-        }
-    }
-    saco.push(gifts.splice(0, 1))
-    res.push(saco.join(' ').trimEnd())
-
-    return res.filter(item => item !== '')
+    return gifts.join(' ')
+        .match(new RegExp(`\\b(\\w ?){1,${maxWeight}}(?= |$)`, 'g')) || [];
 }
 
-//1- agarro el primer elmento de gifts (gifts.splice(0,1))
-//2- agarro un saco vacio (array) y pregunto si la suma del length del saco y el elemento supera al maxWeight
-//3- si supera, cierro el saco (lo pusheo a res) y meto el elemento en un saco nuevo
-//4- si no supera, meto el elemento en el saco actual y agarro el elemento que sigue
+//1- une los elementos del array en un solo string, separados por una tabulación ' '
+//2- busca todas las cadenas que tengan entre 1 y maxWeight de carácteres
+
+
+
+//usando Regex queda mucho más simple :) 
+//A veces es conveniente utilizar expresiones regulares para trabajar con strings 
 
 
 console.log(carryGifts(['toy', 'toy', 'toy', 'toy'], 2))
