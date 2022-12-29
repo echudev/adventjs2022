@@ -10,6 +10,8 @@ printTable([
   { name: 'Bike', quantity: 1 },
   { name: 'Book', quantity: 3 }
 ])
+```
+```
 +++++++++++++++++++
 | Gift | Quantity |
 | ---- | -------- |
@@ -26,6 +28,8 @@ printTable([
   { name: 'PlayStation 5', quantity: 9234782374892 },
   { name: 'Book Learn Web Dev', quantity: 23531 }
 ])
+```
+```
 ++++++++++++++++++++++++++++++++++++++
 | Gift               | Quantity      |
 | ------------------ | ------------- |
