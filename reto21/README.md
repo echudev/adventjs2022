@@ -4,7 +4,7 @@ Hay muchas cartas de niños pidiendo regalos y es muy difícil que podamos hacer
 
 Para ello nos dan un array de objetos con los nombres de los regalos y sus cantidades. Escribe una función que reciba este array y devuelva una cadena con la tabla dibujada.
 
-```
+```javascript
 printTable([
   { name: 'Game', quantity: 2 },
   { name: 'Bike', quantity: 1 },
@@ -23,7 +23,7 @@ printTable([
 
 Otro ejemplo donde se puede ver que la tabla siempre usa sólo el espacio justo dependiendo de la longitud de los nombres de los regalos y de las cantidades.
 
-```
+```javascript
 printTable([
   { name: 'PlayStation 5', quantity: 9234782374892 },
   { name: 'Book Learn Web Dev', quantity: 23531 }
