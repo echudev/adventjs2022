@@ -1,23 +1,11 @@
 function checkPart(part) {
-    let inverted = ''
-
-    for (let i = part.length - 1; i >= 0; i--) {
-        inverted = inverted.concat('', part[i])
-    }
-
-    if (part == inverted) {
+    if (part === part.split('').reverse().join('')) {
         return true
-    } else {
-        for (let i = 0; i < inverted.length; i++) {
-
-            let removed = inverted.replace(inverted[i], '')
-            console.log(removed, inverted)
-            if (removed == part) {
-                return true
-            }
-        }
     }
-    return false
+    return !!part.split('').find((char) => {
+        let newPart = part.replace(char, '')
+        return newPart === newPart.split('').reverse().join('')
+    })
 }
 
 
@@ -30,3 +18,6 @@ console.log(checkPart("miidim")) // true
 
 console.log(checkPart("midu")) // false
 // "midu" no puede ser un palíndromo después de eliminar un carácter
+
+
+//Esta es mi mejor solución, con 160 puntos
