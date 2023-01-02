@@ -1,14 +1,27 @@
 function canExit(maze) {
-    console.log(maze[0].indexOf('S'))
+    
+    const actions = {
+        Inicio: function (x, y) {
+            actions.Avanzar(x, y)
+        },
+        Avanzar: function (x, y) {
+            console.log(maze[x][y])
+        },
+        Retroceder: function (x, y) {
+            console.log('retrocede', x, y)
+        }
+    }
+
+    maze.map(x => {
+        x.map(y => {
+            y === 'S'
+                ? actions.Inicio(maze.indexOf(x), x.indexOf(y))
+                : null
+        })
+    })
 
     return false
 }
-
-
-
-
-
-
 
 
 canExit([
