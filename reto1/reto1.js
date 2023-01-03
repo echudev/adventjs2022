@@ -1,17 +1,9 @@
 function wrapping(gifts) {
-
-    const wrappedGifts = gifts.map(gift => {
-        let top = ''
-        let bot = ''
-        for (let n=0; n<=gift.length+1; n++) {
-            top += '*'
-            bot += '*'
-        }
-        return `${top}\n*${gift}*\n${bot}`
+    return gifts.map(gift => {
+      let a = '*'.repeat(gift.length + 2)
+      return `${a}\n*${gift}*\n${a}`
     })
-
-    return wrappedGifts
-}
+  }
 
 
-wrapping(['cat', 'marco', 'chota'])
+console.log(wrapping(['cat', 'marco', 'chota']))
