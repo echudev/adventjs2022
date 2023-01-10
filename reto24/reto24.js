@@ -1,26 +1,12 @@
 function canExit(maze) {
+    let start = []
+    maze.map((horizontal, h) => horizontal.map((vertical, v) => {
+        vertical === 'S' ? start.push(h, v) : null
+    }))
+
     
-    const actions = {
-        Inicio: function (x, y) {
-            actions.Avanzar(x, y)
-        },
-        Avanzar: function (x, y) {
-            console.log(maze[x][y])
-        },
-        Retroceder: function (x, y) {
-            console.log('retrocede', x, y)
-        }
-    }
 
-    maze.map(x => {
-        x.map(y => {
-            y === 'S'
-                ? actions.Inicio(maze.indexOf(x), x.indexOf(y))
-                : null
-        })
-    })
-
-    return false
+    console.log(start)
 }
 
 
